@@ -1,0 +1,27 @@
+﻿@model PSICAP2.Models.Fabricante
+
+<div>
+    <h4>Fabricante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FabricanteId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FabricanteId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.FabricanteId }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

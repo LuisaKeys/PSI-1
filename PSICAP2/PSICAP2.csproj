@@ -121,6 +121,10 @@
     <Content Include="Views\Categoria\Details.cshtml" />
     <Content Include="Views\Categoria\Delete.cshtml" />
     <Content Include="Views\Fabricante\Index.cshtml" />
+    <Content Include="Views\Fabricante\Create.cshtml" />
+    <Content Include="Views\Fabricante\Edit.cshtml" />
+    <Content Include="Views\Fabricante\Details.cshtml" />
+    <Content Include="Views\Fabricante\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
