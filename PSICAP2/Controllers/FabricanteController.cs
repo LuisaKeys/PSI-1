@@ -11,7 +11,6 @@ using System.Data.Entity;
 
 namespace PSICAP2.Controllers
 {
-   
     public class FabricanteController : Controller
     {
         private EFContext context = new EFContext();
