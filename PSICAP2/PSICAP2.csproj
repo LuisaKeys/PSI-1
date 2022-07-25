@@ -274,11 +274,13 @@
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\FabricanteController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Fabricante.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +299,7 @@
     <Content Include="Scripts\jquery-1.10.1.min.map" />
     <Content Include="Views\Fabricante\Edit.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
