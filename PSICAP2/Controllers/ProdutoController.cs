@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using PSICAP2.Context;
 using PSICAP2.Models;
 using System.Data.Entity;
+using System.Net;
 
 namespace PSICAP2.Controllers
 {
@@ -21,9 +22,20 @@ namespace PSICAP2.Controllers
         }
 
         // GET: Produto/Details/5
-        public ActionResult Details(int id)
+        
+        public ActionResult Details(long? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Produto produto = context.Produtos.Where(p => p.ProdutoId == id).
+            Include(c => c.Categoria).Include(f => f.Fabricante).First();
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(produto);
         }
 
         // GET: Produtos/Create
@@ -53,42 +65,71 @@ namespace PSICAP2.Controllers
             }
         }
 
-        // GET: Produto/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Produtos/Edit/5
+        public ActionResult Edit(long? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Produto produto = context.Produtos.Find(id);
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.CategoriaId = new SelectList(context.Categorias.OrderBy(b => b.Nome), "CategoriaId",
+            "Nome", produto.CategoriaId);
+            ViewBag.FabricanteId = new SelectList(context.Fabricantes.OrderBy(b => b.Nome), "FabricanteId",
+            "Nome", produto.FabricanteId);
+            return View(produto);
         }
 
         // POST: Produto/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Produto produto)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    context.Entry(produto).State = EntityState.Modified;
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(produto);
             }
             catch
             {
-                return View();
+                return View(produto);
             }
         }
 
-        // GET: Produto/Delete/5
-        public ActionResult Delete(int id)
+        // GET: Produtos/Delete/5
+        public ActionResult Delete(long? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Produto produto = context.Produtos.Where(p => p.ProdutoId == id).
+            Include(c => c.Categoria).Include(f => f.Fabricante).First();
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(produto);
         }
 
-        // POST: Produto/Delete/5
+        // POST: Produtos/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                Produto produto = context.Produtos.Find(id);
+                context.Produtos.Remove(produto);
+                context.SaveChanges();
+                TempData["Message"] = "Produto " + produto.Nome.ToUpper() + " foi removido";
                 return RedirectToAction("Index");
             }
             catch
