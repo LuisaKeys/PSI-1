@@ -5,7 +5,6 @@
     ViewBag.Title = "Listagem de FABRICANTES";
 }
 
-<!-- Mensagem de exclusão -->
 @if (@TempData["Message"] != null)
 {
     <div class="alert alert-success" role="alert">
@@ -55,9 +54,6 @@
     </div>
 </div>
 
-
-
-
 @section styles{
     <link href="@Url.Content("~/content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
 }
@@ -72,4 +68,4 @@
         $('#liFabricantes').addClass("active");
 
     </script>
-}  
+}                                                                                           

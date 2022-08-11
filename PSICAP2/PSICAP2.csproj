@@ -306,6 +306,7 @@
     <Content Include="Views\Produto\Details.cshtml" />
     <Content Include="Views\Produto\Delete.cshtml" />
     <Content Include="Views\Produto\_PorFabricante.cshtml" />
+    <Content Include="Views\Produto\_PorCategoria.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
