@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PSICAP2.Context;
-using PSICAP2.Models;
+using Modelo.Cadastros;
 using System.Data.Entity;
 using System.Net;
 

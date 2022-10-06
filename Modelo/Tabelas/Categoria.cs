@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Modelo.Cadastros;
 
 
-namespace PSICAP2.Models
+namespace Modelo.Tabelas
 {
     public class Categoria
     {

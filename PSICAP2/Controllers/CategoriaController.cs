@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PSICAP2.Models;
 using PSICAP2.Context;
 using System.Net;
 using System.Data.Entity;
+using Modelo.Tabelas;
 
 namespace PSICAP2.Controllers
 {
