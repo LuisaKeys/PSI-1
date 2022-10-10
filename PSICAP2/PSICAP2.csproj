@@ -268,7 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\FabricanteController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
@@ -300,6 +299,7 @@
     <Content Include="Views\Produto\Delete.cshtml" />
     <Content Include="Views\Produto\_PorFabricante.cshtml" />
     <Content Include="Views\Produto\_PorCategoria.cshtml" />
+    <Content Include="Views\Produto\_PartialDetailsContentPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -316,6 +316,14 @@
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <Project>{3843ddc9-6bf1-418d-986c-bf00d906ff80}</Project>
       <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{e1ff587a-fb78-45e2-8a76-01883b00d1d3}</Project>
+      <Name>Persistencia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servico\Servico.csproj">
+      <Project>{c7b5c6e9-39a6-44c4-a5b8-4d89ea79af92}</Project>
+      <Name>Servico</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

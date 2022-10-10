@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSICAP2", "PSICAP2\PSICAP2.csproj", "{82297C4D-BFE7-4931-9602-0AC06173DDF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{3843DDC9-6BF1-418D-986C-BF00D906FF80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Modelo\Modelo.csproj", "{3843DDC9-6BF1-418D-986C-BF00D906FF80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{E1FF587A-FB78-45E2-8A76-01883B00D1D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servico", "Servico\Servico.csproj", "{C7B5C6E9-39A6-44C4-A5B8-4D89EA79AF92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{3843DDC9-6BF1-418D-986C-BF00D906FF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3843DDC9-6BF1-418D-986C-BF00D906FF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3843DDC9-6BF1-418D-986C-BF00D906FF80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1FF587A-FB78-45E2-8A76-01883B00D1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1FF587A-FB78-45E2-8A76-01883B00D1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1FF587A-FB78-45E2-8A76-01883B00D1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1FF587A-FB78-45E2-8A76-01883B00D1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B5C6E9-39A6-44C4-A5B8-4D89EA79AF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B5C6E9-39A6-44C4-A5B8-4D89EA79AF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B5C6E9-39A6-44C4-A5B8-4D89EA79AF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B5C6E9-39A6-44C4-A5B8-4D89EA79AF92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
