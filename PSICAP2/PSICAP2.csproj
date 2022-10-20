@@ -300,6 +300,8 @@
     <Content Include="Views\Produto\_PorFabricante.cshtml" />
     <Content Include="Views\Produto\_PorCategoria.cshtml" />
     <Content Include="Views\Produto\_PartialDetailsContentPanel.cshtml" />
+    <Content Include="Views\Fabricante\_PartialDetailsCotentPanel.cshtml" />
+    <Content Include="Views\Categoria\_PartiaDetailsContentPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
