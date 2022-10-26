@@ -96,6 +96,7 @@ namespace PSICAP2.Controllers
         // GET: Produtos/Edit/5
         public ActionResult Edit(long? id)
         {
+            PopularViewBag();
             return ObterVisaoProdutoPorId(id);
         }
 
