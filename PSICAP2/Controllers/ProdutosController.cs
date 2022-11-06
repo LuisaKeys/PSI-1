@@ -61,6 +61,7 @@ namespace PSICAP2.Controllers
             }
             catch
             {
+                PopularViewBag(produto);
                 return View(produto);
             }
         }
@@ -90,6 +91,7 @@ namespace PSICAP2.Controllers
         [HttpPost]
         public ActionResult Create(Produto produto)
         {
+            PopularViewBag();
             return GravarProduto(produto);
         }
 
