@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Modelo.Cadastros.Produto>
+
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Em destaque</h2>
+                    <a href="products.html">ver todos os produtos -></a>
+                    <hr />
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                if (item.Destaque == true)
+                {
+                    if (item.Logotipo == null)
+                    {
+                        <div></div>
+                    }
+                    else
+                    {
+                        <div class="col-md-4">
+                            <div class="product-item">
+                                <a href="#"><img src="@Url.Action("GetLogotipo", "Produtos", new { id = item.ProdutoId })" style="display: block; margin-left: auto; margin-right: auto; height: 200px" /></a>
+                                <div class="down-content">
+                                    <a href="#"><h4>@Html.DisplayFor(modelItem => item.Nome)</h4></a>
+                                    <h6>@Html.DisplayFor(modelItem => item.ProdutoId)</h6>
+                                    <p>Fabricante: @Html.DisplayFor(modelItem => item.Fabricante.Nome)</p>
+                                    <span>@Html.DisplayFor(modelItem => item.Categoria.Nome)</span>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    }
+                }
+
+            </div>
+    </div>
+</div>
+
+
+@*<div class="panel-body">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProdutoId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>Categoria</th>
+                <th>Fabricante</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.Destaque == true)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProdutoId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fabricante.Nome)
+                        </td>
+
+                    </tr>
+                }
+
+
+            }
+        </tbody>
+    </table>
+</div>*@

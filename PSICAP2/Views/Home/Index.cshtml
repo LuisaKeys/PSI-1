@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Modelo.Cadastros.Produto>
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    ViewBag.Title = "Listagem de PRODUTOS";
+}
+
+@Html.Partial("~\\Views\\Produtos\\_PartialDestaqueContentPanel.cshtml", Model)
+
+@Html.Partial("~\\Views\\Produtos\\_PartialUltimos30diasContentPanel.cshtml", Model)
