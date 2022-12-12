@@ -17,11 +17,9 @@ namespace PSICAP2.Controllers
         {
             HomeClass home = new HomeClass();
 
-            home.listaprodutoDestaques = produtoServico.ObterProdutosClassificadosPorData();
-            home.listaProdutoLancamento = produtoServico.ObterProdutosClassificadosPorDestaque();
+            home.listaprodutoDestaques = produtoServico.ObterProdutosClassificadosPorDestaque();
+            home.listaProdutoLancamento = produtoServico.ObterProdutosClassificadosPorData();
             return View(home);
-
-            //return View(produtoServico.ObterProdutosClassificadosPorNome());
         }
     }
 }

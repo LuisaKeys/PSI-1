@@ -309,8 +309,6 @@
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Produtos\_PartialDestaqueContentPanel.cshtml" />
-    <Content Include="Views\Produtos\_PartialUltimos30diasContentPanel.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

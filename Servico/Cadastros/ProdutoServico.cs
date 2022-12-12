@@ -15,6 +15,14 @@ namespace Servico.Cadastros
         {
             return produtoDAL.ObterProdutosClassificadosPorNome();
         }
+        public IQueryable<Produto> ObterProdutosClassificadosPorData()
+        {
+            return produtoDAL.ObterProdutosClassificadosPorData();
+        }
+        public IQueryable<Produto> ObterProdutosClassificadosPorDestaque()
+        {
+            return produtoDAL.ObterProdutosClassificadosPorDestaque();
+        }
         public Produto ObterProdutoPorId(long id)
         {
             return produtoDAL.ObterProdutoPorId(id);

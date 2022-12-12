@@ -22,9 +22,14 @@ namespace Persistencia.DAL.Cadastros
             return context.Produtos.Where(p => p.ProdutoId == id).Include(c => c.Categoria).
             Include(f => f.Fabricante).First();
         }
-        public IQueryable<Produto> ObterProdutosClassificadosPor()
+        public IQueryable<Produto> ObterProdutosClassificadosPorData()
         {
-            return context.Produtos.Where(p => p.DataCadastro >= DateTime.Today.AddMonths(-1)).Include(c => c.Categoria).Include(f => f.Fabricante).OrderBy(n => n.Nome);
+            var lancamento = DateTime.Today.AddMonths(-1);
+            return context.Produtos.Where(p => p.DataCadastro >= lancamento).Include(c => c.Categoria).Include(f => f.Fabricante).OrderBy(n => n.Nome);
+        }
+        public IQueryable<Produto> ObterProdutosClassificadosPorDestaque()
+        {
+            return context.Produtos.Where(p => p.Destaque == true).Include(c => c.Categoria).Include(f => f.Fabricante).OrderBy(n => n.Nome);
         }
         public void GravarProduto(Produto produto)
         {
