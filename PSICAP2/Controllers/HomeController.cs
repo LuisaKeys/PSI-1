@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Servico.Cadastros;
+using Modelo.ViewModels;
 
 namespace PSICAP2.Controllers
 {
@@ -14,7 +15,13 @@ namespace PSICAP2.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(produtoServico.ObterProdutosClassificadosPorNome());
+            HomeClass home = new HomeClass();
+
+            home.listaprodutoDestaques = produtoServico.ObterProdutosClassificadosPorData();
+            home.listaProdutoLancamento = produtoServico.ObterProdutosClassificadosPorDestaque();
+            return View(home);
+
+            //return View(produtoServico.ObterProdutosClassificadosPorNome());
         }
     }
 }
