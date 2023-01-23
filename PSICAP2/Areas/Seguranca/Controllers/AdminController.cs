@@ -98,5 +98,59 @@ namespace PSICAP2.Areas.Seguranca.Controllers
             }
             return View(uvm);
         }
+
+        public ActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = GerenciadorUsuario.FindById(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Usuario usuario)
+        {
+            Usuario user = GerenciadorUsuario.FindById(usuario.Id);
+            if (user != null)
+            {
+                IdentityResult result = GerenciadorUsuario.Delete(user);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return new HttpStatusCodeResult(
+                    HttpStatusCode.BadRequest);
+                }
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
+
+        // GET: Produtos/Details/5
+        public ActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Usuario usuario = GerenciadorUsuario.FindById(id);
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
+        }
     }
 }
