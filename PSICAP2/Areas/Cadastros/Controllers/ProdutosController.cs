@@ -219,25 +219,6 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         }
 
 
-        // POST: Produtos/Edit/5
-        /*[HttpPost]
-        public ActionResult Edit(Produto produto)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                //context.Entry(produto).State = EntityState.Modified;
-                //context.SaveChanges();
-                produtoServico.GravarProduto(produto);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }*/
-
         // GET: Produtos/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -260,10 +241,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-                //Produto produto = context.Produtos.Find(id);
-                //context.Produtos.Remove(produto);
-                //context.SaveChanges();
+               
                 Produto produto = produtoServico.EliminarProdutoPorId(id);
                 TempData["Message"] = "Produto " + produto.Nome.ToUpper() + " foi removido";
                 return RedirectToAction("Index");

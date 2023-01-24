@@ -1,25 +1,23 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using PSICAP2.Areas.Seguranca.Models;
+using PSICAP2.Infraestrutura;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using PSICAP2.Areas.Seguranca.Models;
-using PSICAP2.Infraestrutura;
 
 namespace PSICAP2.Areas.Seguranca.Controllers
 {
     public class AdminController : Controller
     {
-
         // Definição da Propriedade GerenciadorUsuario
         private GerenciadorUsuario GerenciadorUsuario
         {
             get
             {
-                return HttpContext.GetOwinContext().GetUserManager<GerenciadorUsuario>();
+                return HttpContext.GetOwinContext().
+                GetUserManager<GerenciadorUsuario>();
+
             }
         }
         // GET: Seguranca/Admin
@@ -32,6 +30,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
         {
             return View();
         }
+
         private void AddErrorsFromResult(IdentityResult result)
         {
             foreach (string error in result.Errors)
@@ -39,7 +38,6 @@ namespace PSICAP2.Areas.Seguranca.Controllers
                 ModelState.AddModelError("", error);
             }
         }
-
         [HttpPost]
         public ActionResult Create(UsuarioViewModel model)
         {
@@ -52,9 +50,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
                 };
                 IdentityResult result = GerenciadorUsuario.Create(user, model.Senha);
                 if (result.Succeeded)
-                {
-                    return RedirectToAction("Index");
-                }
+                { return RedirectToAction("Index"); }
                 else
                 {
                     AddErrorsFromResult(result);
@@ -62,6 +58,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
             }
             return View(model);
         }
+
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -80,6 +77,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
             uvm.Email = usuario.Email;
             return View(uvm);
         }
+
         [HttpPost]
         public ActionResult Edit(UsuarioViewModel uvm)
         {
