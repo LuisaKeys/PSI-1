@@ -5,10 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using System.Net;
-using System.IO;
+using Modelo.Cadastros;
 using Servico.Cadastros;
 using Servico.Tabelas;
-using Modelo.Cadastros;
+using System.IO;
 
 namespace PSICAP2.Areas.Cadastros.Controllers
 {

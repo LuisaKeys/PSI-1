@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-@using PSICAP2.Infraestrutura
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"
@@ -8,7 +7,6 @@
     <link rel="shortcut icon" href="~/assets/fideco.ico" type="image/x-icon">
     <link href="@Url.Content("~/content/bootstrap.css")" rel="stylesheet" />
     @RenderSection("styles", false)
-
 
 </head>
 <body>
@@ -20,20 +18,13 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li role="presentation" class="active"><a href="~/Home/Index">Home</a></li>
                     <li role="presentation" id="liCategorias">
-                        @Html.ActionLink("Categorias", "Index", "Categorias", new { area = "Tabelas" })
+                        @Html.ActionLink("Categorias", "Index", "Categorias", new {area = "Tabelas"})
                     </li>
                     <li id="liFabricantes" role="presentation">
                         @Html.ActionLink("Fabricantes", "Index", "Fabricantes", new { area = "Cadastros" })
                     </li>
                     <li id="liProdutos" role="presentation">
                         @Html.ActionLink("Produtos", "Index", "Produtos", new { area = "Cadastros" })
-                    </li>
-                    <li id="liProdutos" role="presentation">
-                        @Html.ActionLink("Usuario", "Index", "Usuario", new { area = "Seguranca" })
-                    </li>
-                    <li id="liProdutos" role="presentation">
-                        @Html.ActionLink("Papéis", "Index", "Papel", new { area = "Seguranca" })
-                    </li>
                 </ul>
             </div>
             <div class="col-xs-9 col-md-9">
