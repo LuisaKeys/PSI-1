@@ -17,6 +17,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         private FabricanteServico fabricanteServico = new FabricanteServico();
 
         // GET: Fabricantes
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             //return View(fabricantes);
@@ -24,6 +25,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         }
 
         // GET: Create
+        [Authorize(Roles = "Administradores")]
         [HttpGet]
         public ActionResult Create()
         {
@@ -44,6 +46,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
 
         // GET: Fabricantes/Edit/5
         [HttpGet]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(long? id)
         {
             if (id == null)
@@ -77,6 +80,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         }
 
         // GET: Fabricantes/Details/5
+        [Authorize(Roles = "Administradores")]
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -95,6 +99,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
 
         // GET: Fabricantes/Delete/5
         [HttpGet]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(long? id)
         {
             if (id == null)
