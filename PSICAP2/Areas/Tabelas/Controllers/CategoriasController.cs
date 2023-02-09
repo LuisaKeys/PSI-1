@@ -20,6 +20,7 @@ namespace PSICAP2.Areas.Tabelas.Controllers
         };
 
         // GET: Categorias
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             return View(categorias);
@@ -27,6 +28,7 @@ namespace PSICAP2.Areas.Tabelas.Controllers
 
         // GET: Categorias
         [HttpGet]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             return View();
@@ -42,6 +44,7 @@ namespace PSICAP2.Areas.Tabelas.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(long id)
         {
             return View(categorias.Where(m => m.CategoriaId == id).First());
@@ -58,12 +61,14 @@ namespace PSICAP2.Areas.Tabelas.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Details(long id)
         {
             return View(categorias.Where(m => m.CategoriaId == id).First());
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(long id)
         {
             return View(categorias.Where(m => m.CategoriaId == id).First());

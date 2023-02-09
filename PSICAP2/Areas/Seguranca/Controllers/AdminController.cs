@@ -21,11 +21,12 @@ namespace PSICAP2.Areas.Seguranca.Controllers
             }
         }
         // GET: Seguranca/Admin
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             return View(GerenciadorUsuario.Users);
         }
-
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +60,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -97,6 +99,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
             return View(uvm);
         }
 
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -136,6 +139,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
         }
 
         // GET: Produtos/Details/5
+        [Authorize(Roles = "Administradores")]
         public ActionResult Details(string id)
         {
             if (id == null)

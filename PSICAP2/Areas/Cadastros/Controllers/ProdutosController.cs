@@ -20,6 +20,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         private FabricanteServico fabricanteServico = new FabricanteServico();
 
         // GET: Produtos
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             //            var produtos =
@@ -30,6 +31,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         }
 
         // GET: Produtos/Details/5
+        [Authorize(Roles = "Administradores")]
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -46,6 +48,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         }
 
         // GET: Produtos/Create
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             //ViewBag.CategoriaId = new SelectList(context.Categorias.OrderBy(b => b.Nome), "CategoriaId", "Nome");
@@ -79,7 +82,8 @@ namespace PSICAP2.Areas.Cadastros.Controllers
             }
         }
 
-        // GET: Produtos/Edit/5
+        // GET: Produtos/Edit/5]
+        [Authorize(Roles = "Administradores")]
         public ActionResult Edit(long? id)
         {
             if (id == null)
@@ -220,6 +224,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
 
 
         // GET: Produtos/Delete/5
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(long? id)
         {
             if (id == null)
@@ -236,6 +241,7 @@ namespace PSICAP2.Areas.Cadastros.Controllers
         }
 
         // POST: Produtos/Delete/5
+        [Authorize(Roles = "Administradores")]
         [HttpPost]
         public ActionResult Delete(long id)
         {

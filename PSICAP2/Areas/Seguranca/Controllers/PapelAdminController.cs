@@ -25,12 +25,14 @@ namespace PSICAP2.Areas.Seguranca.Controllers
         }
 
         // GET: Seguranca/PapelAdmin
+        [Authorize(Roles = "Administradores")]
         public ActionResult Index()
         {
             return View(RoleManager.Roles);
         }
 
         // GET: Create
+        [Authorize(Roles = "Administradores")]
         public ActionResult Create()
         {
             return View();
@@ -54,6 +56,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
         }
 
         //POST: Create
+        [Authorize(Roles = "Administradores")]
         [HttpPost]
         public ActionResult Create([Required] string nome)
         {
@@ -90,7 +93,7 @@ namespace PSICAP2.Areas.Seguranca.Controllers
             });
         }
 
-
+       
         //POST: Edit
         [HttpPost]
         public ActionResult Edit(PapelModificationModel model)
@@ -121,6 +124,8 @@ namespace PSICAP2.Areas.Seguranca.Controllers
         }
 
         // GET: Delete
+        
+        [Authorize(Roles = "Administradores")]
         public ActionResult Delete(string id)
         {
             Papel papel = RoleManager.FindById(id);
